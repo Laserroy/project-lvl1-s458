@@ -1,0 +1,8 @@
+{
+    "name": "lazeroy/braingames",
+    "description": "1st project",
+    "require": {}
+    "bin": [
+    "bin/brain-games"
+    ]
+}
