@@ -1,9 +1,24 @@
 {
-    "name": "lazeroy/braingames",
-    "description": "1st project",
-    "require": {},
-    "bin": [
-    "bin/brain-games"
+    "name":"lazeroy/braingames",
+    "description":"console game",
+    "type":"project",
+    "keywords":[
+        "php",
+        "game",
+        "cli"
     ],
-    "minimum-stability": "dev"
+    "require":{
+
+    },
+    "bin":[
+        "bin/brain-games"
+    ],
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Pavel Cherkasov",
+            "email":"deectro@gmail.com",
+            "role":"Developer"
+        }
+    ]
 }
