@@ -1,7 +1,7 @@
 {
     "name": "lazeroy/braingames",
     "description": "1st project",
-    "require": {}
+    "require": {},
     "bin": [
     "bin/brain-games"
     ]
