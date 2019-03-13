@@ -23,7 +23,7 @@
     ],
     "autoload": {
         "files": [
-            "Cli.php"
+            "src/Cli.php"
         ]
     }
 }
