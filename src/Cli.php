@@ -1,7 +1,7 @@
 <?php
 /**
  * Php version 7.2
- * 
+ *
  * @category Sample
  * @package  Sample
  * @author   Pavel <deectro@gmail.com>
@@ -14,7 +14,7 @@ use function cli\line;
 use function cli\prompt;
 /**
  * Ask and print username
- * 
+ *
  * @return username
  */
 function run()
@@ -23,3 +23,4 @@ function run()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 }
+

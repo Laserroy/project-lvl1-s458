@@ -1,7 +1,7 @@
 <?php
 /**
  * Php version 7.2
- * 
+ *
  * @category Sample
  * @package  Sample
  * @author   Pavel <deectro@gmail.com>
@@ -40,3 +40,4 @@ function startBrainEvenGame()
     }
     line("Congratulations, %s!", $name);
 }
+
