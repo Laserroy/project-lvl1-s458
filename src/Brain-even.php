@@ -1,7 +1,7 @@
 <?php
 /**
  * Php version 7.2
- *
+ * 
  * @category Sample
  * @package  Sample
  * @author   Pavel <deectro@gmail.com>
@@ -12,12 +12,23 @@ namespace BrainGames\BrainEven;
 
 use function cli\line;
 use function cli\prompt;
-
+/**
+ * Ask and print username
+ * 
+ * @param integer $num given number
+ * 
+ * @return boolean
+ */
 function isEven($num)
 {
     return $num % 2 === 0;
 }
 
+/**
+ * Start end game
+ * 
+ * @return game result
+ */
 function startBrainEvenGame()
 {
 
@@ -40,4 +51,3 @@ function startBrainEvenGame()
     }
     line("Congratulations, %s!", $name);
 }
-
