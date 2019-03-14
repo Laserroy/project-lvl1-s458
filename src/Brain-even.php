@@ -29,7 +29,7 @@ function isEven($num)
  *
  * @return game result
  */
-function startBrainEvenGame()
+function startBrainEvenGame($gameStepsCount)
 {
 
     line('Welcome to the Brain Game! ');
@@ -37,7 +37,7 @@ function startBrainEvenGame()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
-    for ($i = 1; $i <= 3; $i += 1) {
+    for ($i = 1; $i <= $gameStepsCount; $i += 1) {
         $givenNum = rand(0, 99);
         $properAnswer = isEven($givenNum) ? 'yes' : 'no';
         line("Question: %s!", $givenNum);

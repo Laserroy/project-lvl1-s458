@@ -14,8 +14,8 @@
         "squizlabs/php_codesniffer": "^3.4"
     },
     "bin":[
-        "bin/brain-games",
-        "bin/brain-even"
+        "brain-games",
+        "brain-even"
     ],
     "scripts":{
         "phpcs": "vendor/bin/phpcs"
