@@ -1,7 +1,7 @@
 <?php
 /**
  * Php version 7.2
- * 
+ *
  * @category Sample
  * @package  Sample
  * @author   Pavel <deectro@gmail.com>
@@ -14,9 +14,9 @@ use function cli\line;
 use function cli\prompt;
 /**
  * Ask and print username
- * 
+ *
  * @param integer $num given number
- * 
+ *
  * @return boolean
  */
 function isEven($num)
@@ -26,7 +26,7 @@ function isEven($num)
 
 /**
  * Start end game
- * 
+ *
  * @return game result
  */
 function startBrainEvenGame()
