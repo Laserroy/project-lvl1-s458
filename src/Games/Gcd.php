@@ -31,12 +31,12 @@ function gcd($a, $b)
  */
 function startGame()
 {
-    $gameParams = function () {
+    $generateQuestionAnswer = function () {
         $x = rand(0, 100);
         $y = rand(0, 100);
         $gameQuestion = "{$x} {$y}";
         $properAnswer = gcd($x, $y);
-        return [$gameQuestion, $properAnswer];
+        return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $gameParams);
+    playGame(DESCRIPTION, $generateQuestionAnswer);
 }

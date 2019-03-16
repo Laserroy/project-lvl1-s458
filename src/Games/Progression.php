@@ -12,6 +12,7 @@ namespace BrainGames\Games\Progression;
 use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'What number is missing in the progression?';
+const PROGRETION_LENGTH = 10;
 /**
  * Makes progression with random numbers
  *
@@ -19,13 +20,12 @@ const DESCRIPTION = 'What number is missing in the progression?';
  */
 function createProgression()
 {
-    $progressionLength = 10;
     $currentValue = rand(0, 10);
     $increaseStep = rand(1, 5);
-    $result = [$currentValue];
-    for ($i = 0; $i < $progressionLength; $i += 1) {
-        $currentValue += $increaseStep;
+    $result = [];
+    for ($i = 0; $i < PROGRETION_LENGTH; $i += 1) {
         $result[] = $currentValue;
+        $currentValue += $increaseStep;
     }
     return $result;
 }
@@ -37,17 +37,10 @@ function createProgression()
  *
  * @return progression string
  */
-function makeQuestionString($numbers, $hiddenNumIndex)
+function createHiddenNumQuestion($numbers, $hiddenNumIndex)
 {
-    $result = '';
-    foreach ($numbers as $key => $value) {
-        if ($key === $hiddenNumIndex) {
-            $result .= '.. ';
-            continue;
-        }
-        $result .= "{$value} ";
-    }
-    return $result;
+    $numbers[$hiddenNumIndex] = '..';
+    return implode(' ', $numbers);
 }
 /**
  * Runs this calc game
@@ -56,12 +49,12 @@ function makeQuestionString($numbers, $hiddenNumIndex)
  */
 function startGame()
 {
-    $gameParams = function () {
+    $generateQuestionAnswer = function () {
         $progression = createProgression();
         $hiddenNumIndex = rand(0, count($progression) - 1);
         $properAnswer = $progression[$hiddenNumIndex];
-        $gameQuestion = makeQuestionString($progression, $hiddenNumIndex);
-        return [$gameQuestion, $properAnswer];
+        $gameQuestion = createHiddenNumQuestion($progression, $hiddenNumIndex);
+        return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $gameParams);
+    playGame(DESCRIPTION, $generateQuestionAnswer);
 }

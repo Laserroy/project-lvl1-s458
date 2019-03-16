@@ -8,7 +8,7 @@
  * @license  BSD https://en.wikipedia.org/wiki/BSD_licenses
  * @link     test
  */
-namespace BrainGames\Games\BrainEven;
+namespace BrainGames\Games\Even;
 use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
@@ -24,17 +24,16 @@ function isEven($num)
     return $num % 2 === 0;
 }
 /**
- * Runs this calc game
+ * Runs this game
  *
  * @return console game
  */
 function startGame()
 {
-    $gameParams = function () {
-        $x = rand(0, 100);
-        $gameQuestion = "{$x}";
-        $properAnswer = isEven($x) ? 'yes' : 'no';
-        return [$gameQuestion, $properAnswer];
+    $generateQuestionAnswer = function () {
+        $gameQuestion = rand(0, 100);
+        $properAnswer = isEven($gameQuestion) ? 'yes' : 'no';
+        return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $gameParams);
+    playGame(DESCRIPTION, $generateQuestionAnswer);
 }

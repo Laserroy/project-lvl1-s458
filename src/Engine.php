@@ -20,27 +20,27 @@ const GAME_STEPS = 3;
 function requestUserName()
 {
     $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
     return $name;
 }
 /**
  * Start end game
  *
- * @param string $gameDescription text game description
- * @param object $gameParams      array of parameters
+ * @param string $gameDescription    text game description
+ * @param object $gameQuestionAnswer array of parameters
  *
  * @return game result
  */
-function playGame($gameDescription, $gameParams)
+function playGame($gameDescription, $gameQuestionAnswer)
 {
     line('Welcome to the Brain Game!');
     line($gameDescription);
     $userName = requestUserName();
+    line("Hello, %s!", $userName);
     for ($i = 0; $i < GAME_STEPS; $i += 1) {
-        [$question, $properAnswer] = $gameParams();
+        [$question, $properAnswer] = $gameQuestionAnswer();
         line("Question: %s", $question);
         $userAnswer = prompt('Your answer: ');
-        if ($userAnswer == $properAnswer) {
+        if ($userAnswer === $properAnswer) {
             line("Correct!");
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'", $userAnswer, $properAnswer);
