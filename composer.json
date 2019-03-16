@@ -21,7 +21,7 @@
         "bin/brain-progression"
     ],
     "scripts":{
-        "phpcs": "vendor/bin/phpcs"
+        "phpcs": "phpcs"
     },
     "license":"MIT",
     "authors":[
