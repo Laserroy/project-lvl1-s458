@@ -25,10 +25,10 @@ function requestUserName()
 }
 /**
  * Start end game
- * 
+ *
  * @param string $gameDescription text game description
- * @param object $gameParams 
- * 
+ * @param object $gameParams      array of parameters
+ *
  * @return game result
  */
 function playGame($gameDescription, $gameParams)
@@ -50,4 +50,3 @@ function playGame($gameDescription, $gameParams)
     }
     line("Congratulations, %s!", $userName);
 }
-

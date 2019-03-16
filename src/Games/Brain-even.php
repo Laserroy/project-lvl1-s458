@@ -14,9 +14,9 @@ use function BrainGames\Engine\playGame;
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 /**
  * Start end game
- * 
+ *
  * @param int $num random number
- * 
+ *
  * @return boolean is even
  */
 function isEven($num)
@@ -25,7 +25,7 @@ function isEven($num)
 }
 /**
  * Runs this calc game
- * 
+ *
  * @return console game
  */
 function startGame()
