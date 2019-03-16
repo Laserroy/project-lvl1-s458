@@ -8,23 +8,24 @@
  * @license  BSD https://en.wikipedia.org/wiki/BSD_licenses
  * @link     test
  */
-namespace BrainGames\Games\BrainEven;
+namespace BrainGames\Games\Gcd;
 use function BrainGames\Engine\playGame;
 
-const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 /**
  * Game rule
  *
- * @param int $num random number
+ * @param int $a random number
+ * @param int $b random number
  *
- * @return boolean is even
+ * @return int greater divisor
  */
-function isEven($num)
+function gcd($a, $b)
 {
-    return $num % 2 === 0;
+    return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 /**
- * Runs this calc game
+ * Runs this gcd game
  *
  * @return console game
  */
@@ -32,8 +33,9 @@ function startGame()
 {
     $gameParams = function () {
         $x = rand(0, 100);
-        $gameQuestion = "{$x}";
-        $properAnswer = isEven($x) ? 'yes' : 'no';
+        $y = rand(0, 100);
+        $gameQuestion = "{$x} {$y}";
+        $properAnswer = gcd($x, $y);
         return [$gameQuestion, $properAnswer];
     };
     playGame(DESCRIPTION, $gameParams);
