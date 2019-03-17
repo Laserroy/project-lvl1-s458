@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Laserroy/project-lvl1-s458.svg?branch=master)](https://travis-ci.org/Laserroy/project-lvl1-s458)
+﻿[![Build Status](https://travis-ci.org/Laserroy/project-lvl1-s458.svg?branch=master)](https://travis-ci.org/Laserroy/project-lvl1-s458)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9437b69c6598da48dc26/maintainability)](https://codeclimate.com/github/Laserroy/project-lvl1-s458/maintainability)
 
 Install using composer
@@ -6,7 +6,14 @@ Install using composer
 $ composer global require lazeroy/braingames
 
 
-brain-prime 
+
+
+
+
+
+
+
+$ brain-prime 
 
 Check wich number is prime
 
@@ -15,7 +22,11 @@ example:
 
 
 
-brain-progression
+
+
+
+
+$ brain-progression
 
 Point missing number from progression
 
@@ -24,7 +35,11 @@ example:
 
 
 
-brain-gcd
+
+
+
+
+$ brain-gcd
 
 Find a greatest common divisor
 
@@ -33,7 +48,11 @@ example:
 
 
 
-brain-calc
+
+
+
+
+$ brain-calc
 
 Calculate a given expression
 
@@ -42,7 +61,11 @@ example:
 
 
 
-brain-even
+
+
+
+
+$ brain-even
 
 Check wich number is even
 
@@ -51,9 +74,12 @@ example:
 
 
 
-greetings with user
 
-brain-games
+
+
+
+
+$ brain-games
 
 Say Hello to user
 
