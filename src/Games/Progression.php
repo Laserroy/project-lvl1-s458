@@ -16,14 +16,16 @@ const PROGRESSION_LENGTH = 10;
 /**
  * Makes progression with random numbers
  *
+ * @param int $startValue   start value
+ * @param int $increaseStep increase value
+ * @param int $length       size
+ *
  * @return array numbers
  */
-function createProgression()
+function createProgression($startValue, $increaseStep, $length)
 {
-    $startValue = rand(0, 10);
-    $increaseStep = rand(1, 5);
     $result = [];
-    for ($i = 0; $i < PROGRESSION_LENGTH; $i += 1) {
+    for ($i = 0; $i < $length; $i += 1) {
         $result[] = $startValue + $i * $increaseStep;
     }
     return $result;
@@ -36,7 +38,9 @@ function createProgression()
 function startGame()
 {
     $generateGameData = function () {
-        $progression = createProgression();
+        $startValue = rand(0, 10);
+        $increaseStep = rand(1, 5);
+        $progression = createProgression($startValue, $increaseStep, PROGRESSION_LENGTH);
         $hiddenNumIndex = rand(0, PROGRESSION_LENGTH - 1);
         $properAnswer = $progression[$hiddenNumIndex];
         $progression[$hiddenNumIndex] = '..';
