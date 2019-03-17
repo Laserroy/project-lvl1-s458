@@ -21,18 +21,15 @@ const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no
  */
 function isPrime($num)
 {
-    $checkStatus = true;
-    for ($i = 2; $i < $num; $i += 1) {
-        if ($num % $i == 0) {
-            $checkStatus = false;
-            break;
-        }
-    }
-    if ($checkStatus) {
-        return true;
-    } else {
+    if ($num < 2) {
         return false;
     }
+    for ($i = 2; $i <= sqrt($num); $i += 1) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
 /**
  * Runs this game
