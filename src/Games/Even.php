@@ -30,10 +30,10 @@ function isEven($num)
  */
 function startGame()
 {
-    $generateQuestionAnswer = function () {
+    $generateGameData = function () {
         $gameQuestion = rand(0, 100);
         $properAnswer = isEven($gameQuestion) ? 'yes' : 'no';
         return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $generateQuestionAnswer);
+    playGame(DESCRIPTION, $generateGameData);
 }

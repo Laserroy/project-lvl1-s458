@@ -41,10 +41,10 @@ function isPrime($num)
  */
 function startGame()
 {
-    $generateQuestionAnswer = function () {
+    $generateGameData = function () {
         $gameQuestion = rand(0, 100);
         $properAnswer = isPrime($gameQuestion) ? 'yes' : 'no';
         return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $generateQuestionAnswer);
+    playGame(DESCRIPTION, $generateGameData);
 }

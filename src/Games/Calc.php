@@ -40,7 +40,7 @@ function calc($x, $y, $operator)
  */
 function startGame()
 {
-    $generateQuestionAnswer = function () {
+    $generateGameData = function () {
         $x = rand(0, 100);
         $y = rand(0, 100);
         $operator = OPERATIONS[rand(0, count(OPERATIONS) - 1)];
@@ -48,5 +48,5 @@ function startGame()
         $properAnswer = calc($x, $y, $operator);
         return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $generateQuestionAnswer);
+    playGame(DESCRIPTION, $generateGameData);
 }

@@ -16,45 +16,32 @@ const PROGRETION_LENGTH = 10;
 /**
  * Makes progression with random numbers
  *
- * @return progression
+ * @return array numbers
  */
 function createProgression()
 {
-    $currentValue = rand(0, 10);
+    $startValue = rand(0, 10);
     $increaseStep = rand(1, 5);
     $result = [];
     for ($i = 0; $i < PROGRETION_LENGTH; $i += 1) {
-        $result[] = $currentValue;
-        $currentValue += $increaseStep;
+        $result[] = $startValue + $i * $increaseStep;
     }
     return $result;
 }
 /**
- * Makes string represent of given progression
- *
- * @param array $numbers        income progression
- * @param int   $hiddenNumIndex index of hiden number
- *
- * @return progression string
- */
-function createHiddenNumQuestion($numbers, $hiddenNumIndex)
-{
-    $numbers[$hiddenNumIndex] = '..';
-    return implode(' ', $numbers);
-}
-/**
- * Runs this calc game
+ * Runs this progression game
  *
  * @return console game
  */
 function startGame()
 {
-    $generateQuestionAnswer = function () {
+    $generateGameData = function () {
         $progression = createProgression();
-        $hiddenNumIndex = rand(0, count($progression) - 1);
+        $hiddenNumIndex = rand(0, PROGRETION_LENGTH - 1);
         $properAnswer = $progression[$hiddenNumIndex];
-        $gameQuestion = createHiddenNumQuestion($progression, $hiddenNumIndex);
+        $progression[$hiddenNumIndex] = '..';
+        $gameQuestion = implode(' ', $progression);
         return [(string) $gameQuestion, (string) $properAnswer];
     };
-    playGame(DESCRIPTION, $generateQuestionAnswer);
+    playGame(DESCRIPTION, $generateGameData);
 }
