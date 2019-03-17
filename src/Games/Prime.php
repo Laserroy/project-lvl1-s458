@@ -44,7 +44,7 @@ function startGame()
     $generateGameData = function () {
         $gameQuestion = rand(0, 100);
         $properAnswer = isPrime($gameQuestion) ? 'yes' : 'no';
-        return [(string) $gameQuestion, (string) $properAnswer];
+        return [$gameQuestion, (string) $properAnswer];
     };
     playGame(DESCRIPTION, $generateGameData);
 }

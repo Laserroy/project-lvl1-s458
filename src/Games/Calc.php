@@ -43,10 +43,10 @@ function startGame()
     $generateGameData = function () {
         $x = rand(0, 100);
         $y = rand(0, 100);
-        $operator = OPERATIONS[rand(0, count(OPERATIONS) - 1)];
+        $operator = OPERATIONS[array_rand(OPERATIONS, 1)];
         $gameQuestion = "{$x} {$operator} {$y}";
         $properAnswer = calc($x, $y, $operator);
-        return [(string) $gameQuestion, (string) $properAnswer];
+        return [$gameQuestion, (string) $properAnswer];
     };
     playGame(DESCRIPTION, $generateGameData);
 }

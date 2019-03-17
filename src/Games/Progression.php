@@ -41,7 +41,7 @@ function startGame()
         $properAnswer = $progression[$hiddenNumIndex];
         $progression[$hiddenNumIndex] = '..';
         $gameQuestion = implode(' ', $progression);
-        return [(string) $gameQuestion, (string) $properAnswer];
+        return [$gameQuestion, (string) $properAnswer];
     };
     playGame(DESCRIPTION, $generateGameData);
 }

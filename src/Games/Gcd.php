@@ -36,7 +36,7 @@ function startGame()
         $y = rand(0, 100);
         $gameQuestion = "{$x} {$y}";
         $properAnswer = gcd($x, $y);
-        return [(string) $gameQuestion, (string) $properAnswer];
+        return [$gameQuestion, (string) $properAnswer];
     };
     playGame(DESCRIPTION, $generateGameData);
 }
